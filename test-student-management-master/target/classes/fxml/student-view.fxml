@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.test_student_management.controllers.StudentController">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20"/>
+    </padding>
+
+    <Label text="Student Management System" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+    <Separator/>
+
+    <GridPane hgap="10" vgap="10">
+        <padding><Insets top="10" bottom="10"/></padding>
+
+        <Label text="ID:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="idField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="150"/>
+
+        <Label text="Student Number:" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+        <TextField fx:id="studentNumberField" GridPane.columnIndex="3" GridPane.rowIndex="0" prefWidth="150"/>
+
+        <Label text="First Name:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="firstNameField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+        <Label text="Last Name:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+        <TextField fx:id="lastNameField" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+
+        <Label text="Course:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField fx:id="courseField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+        <Label text="Year Level:" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+        <TextField fx:id="yearLevelField" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+
+        <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+        <Label text="Phone:" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+        <TextField fx:id="phoneField" GridPane.columnIndex="3" GridPane.rowIndex="3"/>
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Add" onAction="#handleAdd" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        <Button text="Update" onAction="#handleUpdate" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        <Button text="Delete" onAction="#handleDelete" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        <Button text="Clear" onAction="#handleClear" style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-weight: bold;"/>
+    </HBox>
+
+    <TableView fx:id="studentTable" VBox.vgrow="ALWAYS" prefHeight="400">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="studentNumberColumn" text="Student Number" prefWidth="120"/>
+            <TableColumn fx:id="firstNameColumn" text="First Name" prefWidth="120"/>
+            <TableColumn fx:id="lastNameColumn" text="Last Name" prefWidth="120"/>
+            <TableColumn fx:id="courseColumn" text="Course" prefWidth="150"/>
+            <TableColumn fx:id="yearLevelColumn" text="Year" prefWidth="80"/>
+            <TableColumn fx:id="emailColumn" text="Email" prefWidth="150"/>
+            <TableColumn fx:id="phoneColumn" text="Phone" prefWidth="120"/>
+        </columns>
+    </TableView>
+
+    <HBox alignment="CENTER">
+        <Pagination fx:id="studentPagination" />
+    </HBox>
+</VBox>
